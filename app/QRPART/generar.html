@@ -1,0 +1,38 @@
+<!DOCTYPE html >
+<html>
+<head>
+<title>Cross-Browser QRCode generator for Javascript</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="qrcode.js"></script>
+</head>
+<body>
+
+<div id="qrcode" style="width:100px; height:100px; margin-top:15px;"></div>
+<br><br><br><br><br><br><br><br>
+
+<div id="check"></div>
+
+
+<script type="text/javascript">
+
+var msg = window.AppInventor.getWebViewString();
+
+
+ new QRCode(document.getElementById("qrcode"), msg);
+
+
+function myOnLoadFunction(){
+
+    $('#check').load('makepng.php',{src:this.src})
+    
+window.AppInventor.setWebViewString('https://futurempresa.000webhostapp.com/QRPART/image.png')
+
+
+
+
+}
+
+</script>
+</body>
